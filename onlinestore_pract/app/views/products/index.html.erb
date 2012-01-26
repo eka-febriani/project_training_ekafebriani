@@ -1,0 +1,19 @@
+<h3>Listing products</h3>
+<hr />
+
+<%= flash[:notice] %>
+
+<div class="product">
+  <% @products.each do |f| %>
+    <p>Name: <%= f.name %></p>
+    <p>Name: <%= f.price %></p>
+    <p>
+      <%= link_to "See more", product_path(f.id) %></p>
+      <% if f.user_id == current_user.id %>
+        <%= link_to "Edit", edit_product_path(f.id) %>
+        <%= link_to "Destroy", product_path(f.id), :confirm => 'Are you sure', :method => :delete %>
+      <% end %> 
+    </p>
+  <% end %>
+</div>
+

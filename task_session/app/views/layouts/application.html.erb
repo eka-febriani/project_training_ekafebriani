@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Session2</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", :defaults%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= raw(welcome_text) %>
+<br />
+<br />
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<h3>Listing Articles</h3>
+<hr />
+
+<%= flash[:notice]%>
+
+<div class="article">
+  <%= @articles.each do |f| %>
+    <p><%= truncate(f.body, :length => 20, :omission =>"...")%></p>
+    <p>
+      <%= link_to "See detail", article_path(f.id) %>
+      <% if f.user_id == :current_user.id %>
+        <%= link_to "Edit", edit_article_path(f.id) %>
+        <%= link_to "Destroy", article_path(f.id), :confirm => 'Are you sure', :method => :delete %>
+      <% end %> 
+    </p>
+  <% end %>
+</div>
+

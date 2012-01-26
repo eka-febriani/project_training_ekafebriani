@@ -1,0 +1,58 @@
+#header, #sidebar, #content{
+  margin: 10px 10px;
+}
+
+body{
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header{
+  width: 960px;
+}
+
+#header h1{
+  text-align: center;
+  padding: 5px 0;
+}
+
+#header ul li{
+  float: left;
+  list-style: none;
+  text-align: center;
+  padding: 0 5px;
+  margin: 0 5px;
+  color: #000;
+}
+
+a{
+  text-decoration: none;
+}
+
+#sidebar{
+  width: 225px;
+  float: left;
+  padding: 10px 15px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+#sidebar ul li{
+  list-style: none;
+  margin: 5px 0;
+}
+
+#content{
+  width: 650px;
+  float: right;
+}
+
+tr{
+  border-bottom: 1px solid #000;
+}
+
+th, td{
+  width: 200px;
+  text-align: center;
+}
+

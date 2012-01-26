@@ -1,0 +1,41 @@
+<h1>Edit User</h1>
+
+<% if @user.errors.any? %>
+  <div id="errorExplanation">
+    <h2>
+<%= pluralize(@user.errors.count, "error") %>
+    </h2>
+    <ul>
+
+<% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg%></li>
+      <% end %>
+    </ul>
+  <div>
+<% end %>
+
+
+<%= form_for @user do |f| %>
+  <%= f.label :first_name, :style => "margin-right: 10px"%> <br />
+  <%= f.text_field :first_name, :style => "margin-bottom: 10px;"%> <br />
+
+  <%= f.label :last_name, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_field :last_name, :style => "margin-bottom: 10px;"%><br />
+
+  <%= f.label :username, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_field :username, :style => "margin-bottom: 10px;"%><br />
+
+  <%= f.label :address, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_area :address, :style => "height: 100px; margin-bottom: 10px;"%><br />
+
+  <%= f.label :birthday, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_field :birthday, :style => "margin-bottom: 10px;"%><br />
+
+  <%= f.label :age, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_field :age, :style => "margin-bottom: 10px;"%><br />
+
+  <%= f.label :email, :style => "margin-right: 5px;"%> <br />
+  <%= f.text_field :email, :style => "margin-bottom: 10px;"%><br />
+
+  <%= f.submit "Update"%>
+<%end%>

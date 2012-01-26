@@ -1,0 +1,17 @@
+<h3> New article </h3>
+
+<%=form_for @article do |f|%>
+   <p> 
+    <%= f.label :title %>
+    <%= f.text_field :title %> 
+  </p>
+   <p> 
+    <%= f.label :body %> 
+    <%= f.text_area :body %> 
+  </p>
+
+  <p class="button">
+    <%= f.submit "Create"%>
+    <%= link_to "Back"%>
+  </p> 
+<% end %>

@@ -1,0 +1,10 @@
+<h3>New category</h3>
+
+<%= form_for @category, :url => { :action => :create } do |f| %>  
+  <p>Name: <%= f.text_field :name %></p>
+  <p>Parent Category : <%= f.select :parent_id, @parent_category, { :include_blank => true } %></p>
+  <p> 
+    <%= f.submit "Create"%>
+    <%= link_to "Back", admin_cateories_path%>
+  </P>
+<% end %>

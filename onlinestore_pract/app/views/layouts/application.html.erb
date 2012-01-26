@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Store</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+    <h1>Welcome to my store</h1>
+    <hr />
+    <ul>
+      <li><%=link_to "Home"%></li>
+      <li><%=link_to "Products", products_path%></li>
+      <li><%=link_to "Article", articles_path%></li>
+      <li><%=link_to "Category", admin_categories_path%></li>
+    </ul>
+    <br />
+  </div>
+
+  <div id="sidebar">
+    <ul>
+      <li><%=link_to "Edit Profile", edit_user_path(current_user.id)%></li>
+      <li><%=link_to "Sell a Product", new_product_path%></li>
+      <li><%=link_to "Share an Article", new_article_path%></li>
+      <li><%=link_to "Logout"%></li>
+    </ul>
+
+     <!--TO DO: belum di declare lebih lanjut!-->
+      <div id="list-category">
+        <h4> List Category </h4>
+        <ul> 
+          <li>
+            <ul>
+              <li></li>
+            </ul> 
+          </li>
+        </ul>
+      </div>
+    
+  </div>
+
+  <div id="content">
+    <hr />
+      <%= yield %>
+  </div>
+</body>
+</html>

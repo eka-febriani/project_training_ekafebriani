@@ -1,0 +1,12 @@
+<h3> Edit Article </h3>
+
+<%= form_for @article do |f| %>  
+  <%= f.label :title, :style => "margin-right: 10px"%>
+  <%= f.text_field :title%> <br />
+
+  <%= f.label :body, :style => "margin-right: 5px"%>
+  <%= f.text_area :body %><br />
+  <%= f.submit "Update"%>
+  <%= link_to "Back", articles_path %>
+  
+<% end %>

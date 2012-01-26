@@ -1,0 +1,14 @@
+<h4>@article.title</h4>
+
+<p><%= @article.body %></p>
+
+<% unless(current_user.nil?) %>
+  <%= form_for @comment, :url => comments_path, :remote => true do |f| -%>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :article_id, :value => @article.id %>
+    <%= submit_tag "comment" %>
+  <% end -%>
+<% end %>
+
+<%= link_to "Back to Article List", articles_path %>
+

@@ -1,0 +1,27 @@
+<h3>Listing categories</h3>
+<hr />
+<p><%= link_to "New category", new_admin_category_path %></p>
+
+<%= flash[:notice] %>
+
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Parent category </th>
+    <th></th>
+  </tr><br />  
+</table>
+<table>
+  <% @categories.each do |f| %>
+    <tr>
+      <td"><%= f.name%></td>
+      <td"><%= f.parent_id%></td>
+      <td">
+        <%= link_to "Show", admin_category_path(f.id)%>
+        <%= link_to "Edit", edit_admin_category_path(f.id) %>
+        <%= link_to "Destroy", admin_category_path(f.id), :confirm => 'Are you sure', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
